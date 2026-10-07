@@ -1158,9 +1158,7 @@
                 .classList.remove('active');
 
 
-            document
-                .getElementById('page1')
-                .classList.add('active');
+            document.querySelector('.page1').classList.add('active');
 
         });
 
@@ -1202,22 +1200,14 @@
         ========================================= */
 
         function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
-            document
-                .querySelectorAll('.page')
-                .forEach(page => {
-                    page.classList.remove('active');
-                });
+    const page = document.querySelector('.' + pageId);
 
-
-            const page = document.getElementById(pageId);
-
-            if (page) {
-                page.classList.add('active');
-            }
-
+    if (page) {
+        page.classList.add('active');
+    }
         }
-
 
         /* =========================================
            3. FLOATING HEARTS FOR PAGE 4
